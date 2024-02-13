@@ -14,8 +14,6 @@ header:
     - name: About
       slug: /
     - name: CV
-    - name: Gallery
-      slug: /gallery
     - name: Creations
       slug: /creations
 footer:
