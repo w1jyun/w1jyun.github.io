@@ -23,24 +23,25 @@ slug: /creations
 .instagram-media {
     min-width: unset !important;
 }
-#videoContainer {
+#video-layout {
     display: grid;
 	grid-template-columns: 1fr 1fr;
     width: 100%;
 }
+
 </style></head>
 <body>
 <h2><strong>Video</strong></h2><hr color='343434' class='line'/>
 <h3>Nobel Week Delegation</h3>
-<div id='videoContainer'>
-<iframe class='yt' src="https://www.youtube.com/embed/452k94FTsFo?si=ilCMt34f-giaUIYZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+<div id='video-layout'>
+<iframe class='yt' src="https://www.youtube.com/embed/452k94FTsFo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 
 <iframe class='yt' src="https://www.youtube.com/embed/QBwsQqtssqQ?si=MA7s5JsD9DVf1lyp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 </div>
 
 <br/>
 <h3>POSTECH Student Ambassador Alimi</h3>
-<div id='videoContainer'>
+<div id='video-layout'>
 <iframe class='yt' src="https://www.youtube.com/embed/ohpECIzJX_o?si=lUlYmTGwZvma3ocC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <iframe class='yt' src="https://www.youtube.com/embed/vGb7kI2eyzU?si=8790dpgOp8AhTYoC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -56,7 +57,7 @@ slug: /creations
 
 <br/>
 <h3>1st Cyber POSTECH-KAIST Science War</h3>
-<div id='videoContainer'>
+<div id='video-layout'>
 <iframe class='yt' src="https://www.youtube.com/embed/--mz1d7umFY?si=Hv3zlksQUu1i-y5N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <iframe class='yt' src="https://www.youtube.com/embed/ZLEbGo9ul98?si=j3MyxkhPJCxn84OW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -64,7 +65,7 @@ slug: /creations
 
 <br/>
 <h3>Personal Youtube Channel</h3>
-<div id='videoContainer'>
+<div id='video-layout'>
 <iframe class='yt' src="https://www.youtube.com/embed/rXrsFXWO15c?si=qriN64lTWskRypzt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <iframe class='yt' src="https://www.youtube.com/embed/64dJiy6KAx0?si=iK7k9vF3OJ_Td5RN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
