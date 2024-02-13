@@ -1,0 +1,96 @@
+I"<html><head><style>
+.item {
+	display:grid;
+	grid-template-columns:1fr 5fr;
+}
+.line {
+	margin-top:-10px;
+	margin-bottom:15px;
+}
+</style></head>
+<!-- style="display:grid; grid-template-columns:1fr 5fr;" -->
+<body>
+<h2><strong>Education</strong></h2><hr color="343434" class="line" />
+<div class="item">
+<p>Feb, 2023 ~ Present</p>
+<p><strong>M.S. - Ph.D. Integrated Course, Dept. of Computer Science and Engineering</strong>
+	<br />
+	<span>
+	<a href="https://cg.postech.ac.kr/">Computer Graphics Lab</a>, POSTECH(Pohang University of Science and Technology), Republic of Korea
+	<br />
+	(Advisor: Prof. Sunghyun Cho)
+	</span>
+</p>
+</div>
+
+<div class="item">
+<p>Feb, 2019 ~<br />Feb, 2023</p>
+<p><strong>B.S. in Computer Science and Engineering</strong>
+	<br />
+	<span>
+	POSTECH(Pohang University of Science and Technology), Republic of Korea
+	</span>
+</p>
+</div>
+
+<div class="item">
+<p>Sep, 2022 ~<br />Feb, 2023</p>
+<p><strong> Exchange student at CTU(Czech Technical University in Prague</strong>
+	<br />
+	<span>
+	Faculty of Information technology(Bachelor program), CTU(Czech Technical University in Prague), Czech Republic
+	</span>
+</p>
+</div>
+
+<h2><strong>Work Experience</strong></h2><hr color="343434" class="line" />
+<p><a href="https://www.sketchsoft3d.com/"><strong>Sketchsoft Inc.</strong></a></p>
+<div class="item">
+<p>June, 2021 ~<br />Sep, 2021</p>
+<p><strong>Frontend Developer Interne</strong>
+	<br />
+	<span>
+	Sketchsoft Inc., Seoul, Republic of Korea
+	</span>
+</p>
+</div>
+
+<div class="item">
+<p>Dec, 2021 ~<br />Jul, 2022</p>
+<p><strong>Full-time Software Engineer</strong>
+	<br />
+	<span>
+	Sketchsoft Inc., Seoul, Republic of Korea
+	</span>
+</p>
+</div>
+
+<div class="item">
+<p>Sep, 2022 ~<br />Aug, 2023</p>
+<p><strong>Part-time Software Engineer</strong>
+	<br />
+	<span>
+	Sketchsoft Inc., Seoul, Republic of Korea
+	</span>
+</p>
+</div>
+
+<h2><strong>Study Experience</strong></h2><hr color="343434" class="line" />
+<p><strong>POSTECH Computer Graphics Lab</strong>
+<p>(December, 2020 - February, 2021) Undergraduate Student Intern</p>
+<p>(June, 2023 - July, 2023) Undergraduate Student Intern</p></p>
+
+<h2><strong>School Activities</strong></h2><hr color="343434" class="line" />
+<p>(March, 2019 - July, 2021) POSTECH Alimi(POSTECH Student Ambassador), the head of media contents team</p>
+<p>(September, 2020 - June, 2021) POSTECH APGC-Lab(student organization to spread and support start-up culture in POSTECH), 13-14th Manager</p>
+<p>(August, 2020 - September, 2020) 1st Cyber POSTECH-KAIST Science War, preparatory committee media contents team member</p>
+<p>(March, 2021 - December, 2021) POSTECH 35th Student council of Computer Science and Engineering, the head of public relations department</p><p>(December, 2023) POSTECH 1st Nobel Week Delegation</p>
+
+<h2><strong>Awards</strong></h2><hr color="343434" class="line" />
+<p>(December, 2023) POSTECH Best Research Award (2nd Prize)</p>
+<p>3D Sketch-Driven Text-to-3D Generation</p>
+
+<h2><strong>Skills</strong></h2><hr color="343434" class="line" />
+<p>C, C++, python, Javascript, Typescript, Node.js</p>
+</body></html>
+:ET

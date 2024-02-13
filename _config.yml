@@ -14,8 +14,10 @@ header:
     - name: About
       slug: /
     - name: CV
-    - name: Blog
-
+    - name: Gallery
+      slug: /gallery
+    - name: Creations
+      slug: /creations
 footer:
   show_powered_by: false
   contact:
