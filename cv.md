@@ -6,7 +6,7 @@ slug: /cv
 <html><head><style>
 .item {
 	display:grid;
-	grid-template-columns:1fr 5fr;
+	grid-template-columns:1fr 0.2fr 5fr;
 }
 .line {
 	margin-top:-10px;
@@ -16,7 +16,7 @@ slug: /cv
 <body>
 <h2><strong>Education</strong></h2><hr color='343434' class='line'/>
 <div class='item'>
-<p>Feb, 2023 ~ Present</p>
+<p>Feb, 2023 ~ Present</p><span></span>
 <p><strong>M.S. - Ph.D. Integrated Course, Dept. of Computer Science and Engineering</strong>
 	<br/>
 	<span>
@@ -28,7 +28,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Feb, 2019 ~<br/>Feb, 2023</p>
+<p>Feb, 2019 ~<br/>Feb, 2023</p><span></span>
 <p><strong>B.S. in Computer Science and Engineering</strong>
 	<br/>
 	<span>
@@ -38,7 +38,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Sep, 2022 ~<br/>Feb, 2023</p>
+<p>Sep, 2022 ~<br/>Feb, 2023</p><span></span>
 <p><strong> Exchange student at CTU(Czech Technical University in Prague)</strong>
 	<br/>
 	<span>
@@ -50,7 +50,7 @@ slug: /cv
 <h2><strong>Work Experience</strong></h2><hr color='343434' class='line'/>
 <!-- <p><a href="https://www.sketchsoft3d.com/"><strong>Sketchsoft Inc.</strong></a></p> -->
 <div class='item'>
-<p>June, 2021 ~<br/>Sep, 2021</p>
+<p>June, 2021 ~<br/>Sep, 2021</p> <span></span>
 <p><strong>Frontend Developer Interne</strong>
 	<br/>
 	<span>
@@ -60,7 +60,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Dec, 2021 ~<br/>Jul, 2022</p>
+<p>Dec, 2021 ~<br/>Jul, 2022</p> <span></span>
 <p><strong>Full-time Software Engineer</strong>
 	<br/>
 	<span>
@@ -70,7 +70,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Sep, 2022 ~<br/>Aug, 2023</p>
+<p>Sep, 2022 ~<br/>Aug, 2023</p> <span></span>
 <p><strong>Part-time Software Engineer</strong>
 	<br/>
 	<span>
@@ -81,7 +81,7 @@ slug: /cv
 
 <h2><strong>Study Experience</strong></h2><hr color='343434' class='line'/>
 <div class='item'>
-<p>Dec, 2020 ~<br/>Feb, 2021</p>
+<p>Dec, 2020 ~<br/>Feb, 2021</p> <span></span>
 <p><strong>Undergraduate Student Intern</strong>
 	<br/>
 	<span>
@@ -91,7 +91,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Jun, 2020 ~<br/>Jul, 2023</p>
+<p>Jun, 2020 ~<br/>Jul, 2023</p> <span></span>
 <p><strong>Undergraduate Student Intern</strong>
 	<br/>
 	<span>
@@ -103,7 +103,7 @@ slug: /cv
 
 <h2><strong>School Activities</strong></h2><hr color='343434' class='line'/>
 <div class='item'>
-<p>Mar, 2019 ~<br/>Jul, 2021</p>
+<p>Mar, 2019 ~<br/>Jul, 2021</p> <span></span>
 <p><strong> POSTECH Alimi</strong>
 	<br/>
 	<span>
@@ -115,7 +115,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Sep, 2020 ~<br/>Jun, 2021</p>
+<p>Sep, 2020 ~<br/>Jun, 2021</p> <span></span>
 <p><strong> POSTECH APGC-Lab</strong>
 	<br/>
 	<span>
@@ -127,7 +127,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Aug, 2020 ~<br/>Sep, 2020</p>
+<p>Aug, 2020 ~<br/>Sep, 2020</p> <span></span>
 <p><strong> 1st Cyber POSTECH-KAIST Science War Preparatory Committee</strong>
 	<br/>
 	<span>
@@ -138,7 +138,7 @@ slug: /cv
 
 
 <div class='item'>
-<p>Aug, 2020 ~<br/>Sep, 2020</p>
+<p>Aug, 2020 ~<br/>Sep, 2020</p> <span></span>
 <p><strong>POSTECH 35th Student council of Computer Science and Engineering</strong>
 	<br/>
 	<span>
@@ -148,7 +148,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Dec, 2023</p>
+<p>Dec, 2023</p> <span></span>
 <p><strong>POSTECH 1st Nobel Week Delegation</strong>
 	<br/>
 	<span>
@@ -161,7 +161,7 @@ slug: /cv
 
 <h2><strong>Awards</strong></h2><hr color='343434' class='line'/>
 <div class='item'>
-<p>Dec, 2023</p>
+<p>Dec, 2023</p> <span></span>
 <p><strong>POSTECH Best Research Award (2nd Prize)</strong>
 	<br/>
 	<span>
