@@ -51,7 +51,7 @@ slug: /cv
 <!-- <p><a href="https://www.sketchsoft3d.com/"><strong>Sketchsoft Inc.</strong></a></p> -->
 <div class='item'>
 <p>June, 2021 ~<br/>Sep, 2021</p> <span></span>
-<p><strong>Frontend Developer Interne</strong>
+<p><strong>Frontend Developer Intern</strong>
 	<br/>
 	<span>
 	Sketchsoft Inc., Seoul, Republic of Korea
