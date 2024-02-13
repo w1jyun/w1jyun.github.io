@@ -13,7 +13,6 @@ slug: /cv
 	margin-bottom:15px;
 }
 </style></head>
-<!-- style="display:grid; grid-template-columns:1fr 5fr;" -->
 <body>
 <h2><strong>Education</strong></h2><hr color='343434' class='line'/>
 <div class='item'>
