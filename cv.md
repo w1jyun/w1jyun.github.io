@@ -16,7 +16,7 @@ slug: /cv
 <body>
 <h2><strong>Education</strong></h2><hr color='343434' class='line'/>
 <div class='item'>
-<p>Feb, 2023 ~ Present</p><span></span>
+<p>Feb, 2024 ~ Present</p><span></span>
 <p><strong>M.S. - Ph.D. Integrated Course, Dept. of Computer Science and Engineering</strong>
 	<br/>
 	<span>
@@ -50,7 +50,7 @@ slug: /cv
 <h2><strong>Work Experience</strong></h2><hr color='343434' class='line'/>
 <!-- <p><a href="https://www.sketchsoft3d.com/"><strong>Sketchsoft Inc.</strong></a></p> -->
 <div class='item'>
-<p>June, 2021 ~<br/>Sep, 2021</p> <span></span>
+<p>Jun, 2021 ~<br/>Sep, 2021</p> <span></span>
 <p><strong>Frontend Developer Intern</strong>
 	<br/>
 	<span>
@@ -91,7 +91,7 @@ slug: /cv
 </div>
 
 <div class='item'>
-<p>Jun, 2020 ~<br/>Jul, 2023</p> <span></span>
+<p>Jun, 2023 ~<br/>Jul, 2023</p> <span></span>
 <p><strong>Undergraduate Student Intern</strong>
 	<br/>
 	<span>
