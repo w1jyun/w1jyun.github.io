@@ -131,14 +131,14 @@ slug: /cv
 <p><strong> 1st Cyber POSTECH-KAIST Science War Preparatory Committee</strong>
 	<br/>
 	<span>
-	<i>Member of media contents team</i>
+	<i>Media contents team</i>
 	</span>
 </p>
 </div>
 
 
 <div class='item'>
-<p>Aug, 2020 ~<br/>Sep, 2020</p> <span></span>
+<p>Mar, 2021 ~<br/>Dec, 2021</p> <span></span>
 <p><strong>POSTECH 35th Student council of Computer Science and Engineering</strong>
 	<br/>
 	<span>
@@ -166,6 +166,16 @@ slug: /cv
 	<br/>
 	<span>
 	<i>3D Sketch-Driven Text-to-3D Generation</i>
+	</span>
+</p>
+</div>
+
+<div class='item'>
+<p>Feb, 2025</p> <span></span>
+<p><strong>Best Poster Presentation Award</strong>
+	<br/>
+	<span>
+	<i>37th Workshop on Image Processing and Image Understading (IPIU 2025)</i>
 	</span>
 </p>
 </div>
