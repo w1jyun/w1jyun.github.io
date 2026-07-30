@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WONPIC-M50 World Photo Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260730p" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div>
+            <p class="eyebrow">WONPIC-M50</p>
+            <h1>World Photo Map</h1>
+            <p class="header-copy">Explore WONPIC-M50 by place, year, and resolution.</p>
+          </div>
+          <button id="resetFiltersBtn" class="toolbar-button" type="button">Reset</button>
+        </div>
+
+        <section class="stats-band" aria-label="Summary statistics">
+          <div class="stat">
+            <span class="stat-label">Photos</span>
+            <strong id="statPhotos">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Locations</span>
+            <strong id="statLocations">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Countries</span>
+            <strong id="statCountries">0</strong>
+          </div>
+        </section>
+
+        <section class="controls-band" aria-label="Filters">
+          <label class="field">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="place, file, date" />
+          </label>
+          <div class="field-grid">
+            <label class="field">
+              <span>Year</span>
+              <select id="yearSelect"></select>
+            </label>
+          </div>
+        </section>
+
+        <section class="selection-band">
+          <div class="section-head">
+            <div>
+              <p class="section-kicker" id="panelKicker">Location Groups</p>
+              <h2 id="panelTitle">All Locations</h2>
+            </div>
+            <button id="clearSelectionBtn" class="toolbar-button" type="button" hidden>
+              Back
+            </button>
+          </div>
+          <p id="panelMeta" class="panel-meta"></p>
+          <div id="contentList" class="content-list" aria-live="polite"></div>
+        </section>
+      </aside>
+
+      <main class="map-panel">
+        <div class="map-toolbar">
+          <div class="legend" aria-label="Resolution legend">
+            <span class="legend-label">Resolution</span>
+            <span class="legend-item">
+              <i class="legend-dot legend-dot--high"></i>
+              20 MP+
+            </span>
+            <span class="legend-item">
+              <i class="legend-dot legend-dot--medium"></i>
+              5-20 MP
+            </span>
+            <span class="legend-item">
+              <i class="legend-dot legend-dot--compact"></i>
+              Under 5 MP
+            </span>
+          </div>
+          <button id="fitMapBtn" class="toolbar-button" type="button">Fit map</button>
+        </div>
+        <div id="map" aria-label="World map"></div>
+      </main>
+    </div>
+
+    <dialog id="lightbox" class="lightbox">
+      <div class="lightbox-shell">
+        <button id="closeLightboxBtn" class="lightbox-close" type="button" aria-label="Close">
+          &times;
+        </button>
+        <div class="lightbox-media">
+          <img id="lightboxImage" alt="" />
+        </div>
+        <div class="lightbox-meta">
+          <p id="lightboxPlace" class="lightbox-place"></p>
+          <div class="lightbox-head">
+            <h3 id="lightboxTitle"></h3>
+            <p id="lightboxCounter" class="lightbox-counter"></p>
+          </div>
+          <p id="lightboxInfo" class="lightbox-info"></p>
+          <dl id="lightboxMetadata" class="metadata-grid"></dl>
+          <div class="lightbox-actions">
+            <button id="prevPhotoBtn" class="toolbar-button" type="button">Prev</button>
+            <button id="nextPhotoBtn" class="toolbar-button" type="button">Next</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="./app.js?v=20260730p" type="module"></script>
+  </body>
+</html>

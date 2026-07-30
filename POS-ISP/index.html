@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="POS-ISP, Task-aware ISP, Image Signal Processing, Reinforcement Learning, Object Detection, Instance Segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-277RPQRMBH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-277RPQRMBH');
+  </script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://w1jyun.github.io/">Jiyun Won</a>,</span>
+            <span class="author-block"><a href="https://hmyang0727.github.io/">Heemin Yang</a>,</span>
+            <span class="author-block"><a href="https://woo525.github.io/">Woohyeok Kim</a>,</span>
+            <span class="author-block"><a href="https://sites.google.com/view/jungseulok">Jungseul Ok</a>,</span>
+            <span class="author-block"><a href="https://www.scho.pe.kr/">Sunghyun Cho</a></span>
+          </div>
+
+          <div class="is-size-5 publication-authors hero-meta">
+            <span class="author-block">POSTECH</span>
+          </div>
+
+          <div class="is-size-4 publication-authors hero-meta-small">
+            <span class="author-block">CVPR Findings 2026</span>
+          </div>
+
+        <div class="hero-tags">
+        <span class="pill">Task-aware ISP</span>
+        <span class="pill">Sequence-level RL</span>
+        <span class="pill">Efficient ISP Optimization</span>
+        </div>
+        
+          <div class="publication-links hero-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2604.06938"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+              <a href="static/image/POSISP_Poster_CVPRF2026_v2.pdf"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Poster</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+              <a href="https://github.com/w1jyun/POS-ISP"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <!-- <span class="link-block">
+              <a href="#BibTeX"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-cite"></i></span>
+                <span>BibTeX</span>
+              </a>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Task-aware ISP optimization models image signal proessing (ISP) as a composition of predefined operations and adapts it to task-specific objectives, yet jointly optimizing module sequence and parameters remains challenging. Recent methods employ neural architecture search (NAS) or step-wise reinforcement learning (RL), but NAS introduces training-inference mismatch, and step-wise RL incurs unstable training and high computational overhead due to decision-making at each stage. In this paper, we propose POS-ISP, a sequence-level RL framework that reformulates modular ISP optimization as a global sequence prediction problem. It predicts the entire module sequence and its parameters in a single forward pass and optimizes the pipeline using a terminal task reward, removing intermediate supervision and redundant executions to enhance stability and efficiency. Extensive experiments across multiple downstream tasks demonstrate that POS-ISP consistently improves task performance while reducing computational cost and memory usage. These results highlight sequence-level joint optimization as a stable and efficient paradigm for task-aware ISP design.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-widescreen">
+
+    <h2 class="title is-3 has-text-centered section-title">Key Idea</h2>
+
+    <div class="key-idea-main">
+        💡 Direct task reward learning at the sequence level
+    </div>
+
+
+    <div class="key-idea-box">
+      <div class="key-idea-items">
+        <div class="key-idea-item">
+          <span class="idea-icon">▶</span>
+          <div>
+            <div class="idea-title">Predict the entire ISP pipeline at once</div>
+            <div class="idea-desc">→ Improves computational efficiency</div>
+          </div>
+        </div>
+        <div class="key-idea-item">
+          <span class="idea-icon">▶</span>
+          <div>
+            <div class="idea-title">Optimize with the final task reward</div>
+            <div class="idea-desc">→ Eliminates unstable reward estimation and stabilizes training</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section class="section pt-0">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered section-title">Highlights</h2>
+
+    <p class="section-subtext has-text-centered">
+      POS-ISP achieves state-of-the-art performance across multiple downstream tasks while maintaining low computational overhead.
+    </p>
+
+    <div class="columns is-multiline is-centered">
+
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="card metric-card">
+          <div class="card-content">
+            <div class="metric-title">Detection Gain</div>
+            <div class="metric-value">+0.6</div>
+            <div class="metric-desc">
+              mAP@0.5:0.95 improvement over the previous best method on LOD-Dark.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="card metric-card">
+          <div class="card-content">
+            <div class="metric-title">Segmentation Gain</div>
+            <div class="metric-value">+5.0</div>
+            <div class="metric-desc">
+              mAP@0.5:0.95 improvement over the previous best method on LIS-Dark.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="card metric-card">
+          <div class="card-content">
+            <div class="metric-title">Model Size</div>
+            <div class="metric-value">0.53M</div>
+            <div class="metric-desc">
+              Lightweight predictor with only 0.53M parameters.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-3-desktop is-6-tablet">
+        <div class="card metric-card">
+          <div class="card-content">
+            <div class="metric-title">Predictor Runtime</div>
+            <div class="metric-value">1.55 ms</div>
+            <div class="metric-desc">
+              Runtime of the full ISP pipeline prediction measured on a single NVIDIA RTX 2080 Ti.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered section-title">Framework</h2>
+    <p class="section-subtext has-text-centered">
+      POS-ISP constructs a task-adaptive ISP pipeline using two predictors: a sequence predictor that determines the ordered module sequence, and a parameter predictor that estimates image-adaptive parameters for the selected pipeline.
+    </p>
+
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <figure class="framework-figure">
+          <img src="static/image/overview.png" alt="POS-ISP overview">
+        </figure>
+      </div>
+    </div>
+
+    <div class="columns is-variable is-6 section-gap-small">
+      <div class="column">
+        <div class="method-box">
+          <h3>Sequence Predictor</h3>
+          <p>
+            The sequence predictor autoregressively models the probability of ISP module sequences and predicts the next module conditioned on the previously selected ones.
+            It is implemented with a GRU-based recurrent architecture, which captures inter-module dependencies while enabling efficient sequence-level prediction.
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="method-box">
+          <h3>Parameter Predictor</h3>
+          <p>
+            The parameter predictor extracts a compact image representation with a lightweight CNN encoder and predicts parameter sets for all candidate ISP modules.
+            During pipeline construction, only the parameters corresponding to the selected module sequence are applied.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered section-gap-tiny">
+      <div class="column is-7">
+        <figure class="framework-figure">
+          <img src="static/image/method_seq_predictor.jpg" alt="Sequence predictor architecture">
+        </figure>
+        <p class="caption-text">
+          Detailed architecture of the sequence predictor. It predicts the ISP pipeline autoregressively until the end-of-sequence token is produced.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered section-title">Quantitative Results</h2>
+    <p class="section-subtext has-text-centered">
+      POS-ISP consistently outperforms prior task-aware ISP methods on object detection and instance segmentation.
+    </p>
+
+    <div class="columns">
+      <div class="column">
+        <h3 class="title is-4 has-text-centered">Object Detection</h3>
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="3">LOD-Dark</th>
+                <th colspan="3">LOD-All</th>
+              </tr>
+              <tr>
+                <th>mAP@0.5:0.95</th>
+                <th>mAP@0.5</th>
+                <th>mAP@0.75</th>
+                <th>mAP@0.5:0.95</th>
+                <th>mAP@0.5</th>
+                <th>mAP@0.75</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Input RAW</td>
+                <td>44.1</td>
+                <td>67.7</td>
+                <td>47.5</td>
+                <td>54.3</td>
+                <td>71.4</td>
+                <td>57.1</td>
+              </tr>
+              <tr>
+                <td>Camera ISP</td>
+                <td>37.6</td>
+                <td>55.4</td>
+                <td>41.6</td>
+                <td>49.6</td>
+                <td>65.5</td>
+                <td>53.2</td>
+              </tr>
+              <tr>
+                <td>DRL-ISP</td>
+                <td>44.2</td>
+                <td>67.8</td>
+                <td>48.4</td>
+                <td>54.5</td>
+                <td>72.1</td>
+                <td>58.5</td>
+              </tr>
+              <tr>
+                <td>ReconfigISP</td>
+                <td>43.7</td>
+                <td>66.7</td>
+                <td>47.8</td>
+                <td>51.0</td>
+                <td>68.5</td>
+                <td>54.4</td>
+              </tr>
+              <tr>
+                <td>AdaptiveISP</td>
+                <td>47.2</td>
+                <td>71.4</td>
+                <td>51.7</td>
+                <td>56.8</td>
+                <td>73.5</td>
+                <td>61.4</td>
+              </tr>
+              <tr>
+                <td>POS-ISP (Ours)</td>
+                <td class="best">47.8</td>
+                <td class="best">72.1</td>
+                <td class="best">52.8</td>
+                <td class="best">57.2</td>
+                <td class="best">73.9</td>
+                <td class="best">61.7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns section-gap-medium">
+      <div class="column">
+        <h3 class="title is-4 has-text-centered">Instance Segmentation</h3>
+        <div class="table-wrap">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th rowspan="2">Method</th>
+                <th colspan="3">LIS-Dark</th>
+                <th colspan="3">LIS-All</th>
+              </tr>
+              <tr>
+                <th>mAP@0.5:0.95</th>
+                <th>mAP@0.5</th>
+                <th>mAP@0.75</th>
+                <th>mAP@0.5:0.95</th>
+                <th>mAP@0.5</th>
+                <th>mAP@0.75</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Input RAW</td>
+                <td>27.8</td>
+                <td>45.6</td>
+                <td>27.9</td>
+                <td>32.6</td>
+                <td>52.3</td>
+                <td>33.0</td>
+              </tr>
+              <tr>
+                <td>Camera ISP</td>
+                <td>20.1</td>
+                <td>35.1</td>
+                <td>20.0</td>
+                <td>30.4</td>
+                <td>48.9</td>
+                <td>31.0</td>
+              </tr>
+              <tr>
+                <td>DRL-ISP</td>
+                <td>27.1</td>
+                <td>44.7</td>
+                <td>27.4</td>
+                <td>23.6</td>
+                <td>40.1</td>
+                <td>23.8</td>
+              </tr>
+              <tr>
+                <td>ReconfigISP</td>
+                <td>24.2</td>
+                <td>40.8</td>
+                <td>24.5</td>
+                <td>31.1</td>
+                <td>51.2</td>
+                <td>31.0</td>
+              </tr>
+              <tr>
+                <td>AdaptiveISP</td>
+                <td>25.2</td>
+                <td>42.3</td>
+                <td>25.2</td>
+                <td>32.4</td>
+                <td>52.3</td>
+                <td>32.5</td>
+              </tr>
+              <tr>
+                <td>POS-ISP (Ours)</td>
+                <td class="best">32.1</td>
+                <td class="best">51.8</td>
+                <td class="best">32.1</td>
+                <td class="best">34.9</td>
+                <td class="best">55.9</td>
+                <td class="best">34.9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <p class="caption-text">
+      Quantitative comparisons on object detection and instance segmentation benchmarks. POS-ISP achieves the best results on all reported metrics.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <h2 class="title is-3 has-text-centered section-title">Efficiency</h2>
+
+    <p class="section-subtext has-text-centered">
+      Since ISP operates as a preprocessing stage before downstream vision models, it must run under strict computational and memory constraints.
+      POS-ISP minimizes prediction overhead while maintaining strong task performance.
+    </p>
+
+    <div class="compact-table">
+      <div class="table-wrap">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Params (M)</th>
+              <th>MACs (M)</th>
+              <th>Peak GPU Memory (MB)</th>
+              <th>Runtime (ms)</th>
+              <th>FPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DRL-ISP</td>
+              <td>6.57</td>
+              <td>155.3</td>
+              <td>1013.9</td>
+              <td>15.71</td>
+              <td>63.65</td>
+            </tr>
+            <tr>
+              <td>AdaptiveISP</td>
+              <td>7.18</td>
+              <td>70.2</td>
+              <td>39.6</td>
+              <td>12.72</td>
+              <td>78.62</td>
+            </tr>
+            <tr>
+              <td>POS-ISP (Ours)</td>
+              <td class="best">0.53</td>
+              <td class="best">15.1</td>
+              <td class="best">14.4</td>
+              <td class="best">1.55</td>
+              <td class="best">645.16</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="caption-text">
+        All results are measured on a single NVIDIA RTX 2080 Ti with input resolution of 512 × 512.
+        Runtime excludes the execution time of ISP modules.
+      </p>
+    </div>
+
+    <h3 class="title is-4 has-text-centered runtime-title">On-device Runtime</h3>
+
+    <div class="narrow-table">
+      <div class="table-wrap">
+        <table class="result-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Latency (ms)</th>
+              <th>FPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AdaptiveISP</td>
+              <td>29.0</td>
+              <td>34.48</td>
+            </tr>
+            <tr>
+              <td>POS-ISP</td>
+              <td class="best">7.21</td>
+              <td class="best">138.70</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="caption-text">
+        On-device runtime measured on a Galaxy S10 CPU.
+        POS-ISP runs about 4× faster than AdaptiveISP, enabling real-time mobile deployment with negligible overhead.
+      </p>
+    </div>
+
+    <div class="method-box-mini section-gap-large">
+        <h3>Why is POS-ISP efficient?</h3>
+        <ul class="highlight-list">
+        <li><b>📌 Fixed ISP sequence at inference</b> — only the parameter predictor runs</li>
+        <li><b>📌 Lightweight CNN architecture</b> — compact and efficient model</li>
+        <li><b>📌 Single-pass parameter prediction</b> — all module parameters estimated in one forward pass</li>
+        </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered section-title">Qualitative Results on Object Detection</h2>
+    <p class="section-subtext has-text-centered">
+      Representative comparisons on low-light object detection scenes. POS-ISP improves visibility and produces more reliable downstream detections than prior task-aware ISP methods.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <figure class="qual-figure">
+          <img src="static/image/detection.png" alt="Qualitative results on object detection">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-0">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-3 has-text-centered section-title">Qualitative Results on Instance Segmentation</h2>
+    <p class="section-subtext has-text-centered">
+      Representative comparisons on low-light instance segmentation. POS-ISP preserves object structure more clearly and yields higher-quality masks under challenging illumination.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <figure class="qual-figure">
+          <img src="static/image/segmentation.png" alt="Qualitative results on instance segmentation">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+<pre><code>@inproceedings{won2026posisp,
+  title     = {POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP},
+  author    = {Won, Jiyun and Yang, Heemin and Kim, Woohyeok and Ok, Jungseul and Cho, Sunghyun},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Findings},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/w1jyun" class="external-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This website template is based on the <a href="https://nerfies.github.io/">Nerfies project page</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="./static/js/fontawesome.all.min.js"></script>
+<script src="./static/js/bulma-carousel.min.js"></script>
+<script src="./static/js/bulma-slider.min.js"></script>
+
+
+</body>
+</html>

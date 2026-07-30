@@ -1,0 +1,33 @@
+<section class="home-connect" aria-label="Contact and follow links">
+  {% for contact in site.footer.contact %}
+    {% assign contact_icon_path = "/assets/img/icons/" | append: contact.name | downcase | append: ".png" | relative_url %}
+    <a
+      class="home-connect-link"
+      href="{{ contact.link }}"
+      id="home-{{ contact.name | downcase }}-link"
+      title="{% if contact.value and contact.value != '' and contact.value != nil %}{{ contact.value }}{% else %}{{ contact.name }}{% endif %}"
+      aria-label="{% if contact.value and contact.value != '' and contact.value != nil %}{{ contact.name }}: {{ contact.value }}{% else %}{{ contact.name }}{% endif %}"
+    >
+      <span class="home-connect-icon" aria-hidden="true">
+        <img src="{{ contact_icon_path }}" alt="" />
+      </span>
+      <span class="home-connect-text">{{ contact.name }}</span>
+    </a>
+  {% endfor %}
+
+  {% for follow in site.footer.follow %}
+    {% assign follow_icon_path = "/assets/img/icons/" | append: follow.name | downcase | append: ".png" | relative_url %}
+    <a
+      class="home-connect-link"
+      href="{{ follow.link }}"
+      id="home-{{ follow.name | downcase }}-link"
+      title="{{ follow.name }}"
+      aria-label="{{ follow.name }}"
+    >
+      <span class="home-connect-icon" aria-hidden="true">
+        <img src="{{ follow_icon_path }}" alt="" />
+      </span>
+      <span class="home-connect-text">{{ follow.name }}</span>
+    </a>
+  {% endfor %}
+</section>
