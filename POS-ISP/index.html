@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="keywords" content="POS-ISP, Task-aware ISP, Image Signal Processing, Reinforcement Learning, Object Detection, Instance Segmentation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP</title>
+
+  <meta name="description"
+        content="POS-ISP is a sequence-level reinforcement learning framework for task-aware image signal processing (ISP) pipeline optimization. CVPR Findings 2026.">
+
+  <meta name="keywords"
+        content="POS-ISP, task-aware ISP, image signal processing, ISP optimization, reinforcement learning, CVPR 2026">
+
+  <meta name="author"
+        content="Jiyun Won, Heemin Yang, Woohyeok Kim, Jungseul Ok, Sunghyun Cho">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical"
+        href="https://w1jyun.github.io/POS-ISP/">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro:400,700" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -13,6 +30,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-277RPQRMBH"></script>
   <script>
@@ -23,6 +41,9 @@
     gtag('config', 'G-277RPQRMBH');
   </script>
 </head>
+
+<body>
+  
 <body>
 
 <section class="hero">
@@ -100,7 +121,7 @@
         <h2 class="title is-3 section-title">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Task-aware ISP optimization models image signal proessing (ISP) as a composition of predefined operations and adapts it to task-specific objectives, yet jointly optimizing module sequence and parameters remains challenging. Recent methods employ neural architecture search (NAS) or step-wise reinforcement learning (RL), but NAS introduces training-inference mismatch, and step-wise RL incurs unstable training and high computational overhead due to decision-making at each stage. In this paper, we propose POS-ISP, a sequence-level RL framework that reformulates modular ISP optimization as a global sequence prediction problem. It predicts the entire module sequence and its parameters in a single forward pass and optimizes the pipeline using a terminal task reward, removing intermediate supervision and redundant executions to enhance stability and efficiency. Extensive experiments across multiple downstream tasks demonstrate that POS-ISP consistently improves task performance while reducing computational cost and memory usage. These results highlight sequence-level joint optimization as a stable and efficient paradigm for task-aware ISP design.
+            Task-aware ISP optimization models image signal processing (ISP) as a composition of predefined operations and adapts it to task-specific objectives, yet jointly optimizing module sequence and parameters remains challenging. Recent methods employ neural architecture search (NAS) or step-wise reinforcement learning (RL), but NAS introduces training-inference mismatch, and step-wise RL incurs unstable training and high computational overhead due to decision-making at each stage. In this paper, we propose POS-ISP, a sequence-level RL framework that reformulates modular ISP optimization as a global sequence prediction problem. It predicts the entire module sequence and its parameters in a single forward pass and optimizes the pipeline using a terminal task reward, removing intermediate supervision and redundant executions to enhance stability and efficiency. Extensive experiments across multiple downstream tasks demonstrate that POS-ISP consistently improves task performance while reducing computational cost and memory usage. These results highlight sequence-level joint optimization as a stable and efficient paradigm for task-aware ISP design.
           </p>
         </div>
       </div>
