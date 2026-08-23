@@ -5,7 +5,7 @@
     </a>
     <div class="pub-content">
       <strong class="pub-title">POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP</strong>
-      <p class="pub-authors"><u>Jiyun Won</u>, Heemin Yang, Woohyeok Kim, Jungseul Ok, Sunghyun Cho</p>
+      <p class="pub-authors"><strong>Jiyun Won</strong>, Heemin Yang, Woohyeok Kim, Jungseul Ok, Sunghyun Cho</p>
       <p class="pub-meta"><span class="pub-venue">CVPR Findings 2026</span></p>
       <div class="pub-links">
         <a class="pub-link" href="https://w1jyun.github.io/POS-ISP/" target="_blank" rel="noopener noreferrer">
@@ -23,6 +23,19 @@
           <span class="pub-link-gap" aria-hidden="true"></span>
           <span>Code</span>
         </a>
+        <details class="pub-abstract">
+          <summary class="pub-link pub-abstract-toggle">
+            <i class="fa-solid fa-chevron-down pub-abstract-icon" aria-hidden="true"></i>
+            <span class="pub-link-gap" aria-hidden="true"></span>
+            <span>Abstract</span>
+          </summary>
+          <div class="pub-abstract-body">
+            <p><strong>TL;DR.</strong> Sequence-level reinforcement learning optimizes modular ISP pipelines in one pass for task-aware image processing.</p>
+            <p>Recent work has explored optimizing image signal processing (ISP) pipelines for various tasks by composing predefined modules and adapting them to task-specific objectives. However, jointly optimizing module sequences and parameters remains challenging.</p>
+            <p>Existing approaches rely on neural architecture search (NAS) or step-wise reinforcement learning (RL), but NAS suffers from a training-inference mismatch, while step-wise RL leads to unstable training and high computational overhead due to stage-wise decision-making. We propose POS-ISP, a sequence-level RL framework that formulates modular ISP optimization as a global sequence prediction problem.</p>
+            <p>Our method predicts the entire module sequence and its parameters in a single forward pass and optimizes the pipeline using a terminal task reward, eliminating the need for intermediate supervision and redundant executions. Experiments across multiple downstream tasks show that POS-ISP improves task performance while reducing computational cost, highlighting sequence-level optimization as a stable and efficient paradigm for task-aware ISP.</p>
+          </div>
+        </details>
       </div>
     </div>
   </article>
@@ -33,7 +46,7 @@
     </a>
     <div class="pub-content">
       <strong class="pub-title">Learning to Generate Highly Dynamic Videos using Synthetic Motion Data</strong>
-      <p class="pub-authors">Wonjoon Jin, <u>Jiyun Won</u>, Janghyeok Han, Qi Dai, Chong Luo, Seung-Hwan Baek, Sunghyun Cho</p>
+      <p class="pub-authors">Wonjoon Jin, <strong>Jiyun Won</strong>, Janghyeok Han, Qi Dai, Chong Luo, Seung-Hwan Baek, Sunghyun Cho</p>
       <p class="pub-meta"><span class="pub-venue">CVPR 2026</span></p>
       <div class="pub-links">
         <a class="pub-link" href="https://jinwonjoon.github.io/DynaVid/" target="_blank" rel="noopener noreferrer">
@@ -51,6 +64,20 @@
           <span class="pub-link-gap" aria-hidden="true"></span>
           <span>Code</span>
         </a>
+        <details class="pub-abstract">
+          <summary class="pub-link pub-abstract-toggle">
+            <i class="fa-solid fa-chevron-down pub-abstract-icon" aria-hidden="true"></i>
+            <span class="pub-link-gap" aria-hidden="true"></span>
+            <span>Abstract</span>
+          </summary>
+          <div class="pub-abstract-body">
+            <p><strong>TL;DR.</strong> Synthetic optical-flow motion data helps video diffusion models generate more dynamic and controllable videos.</p>
+            <p>Despite recent progress, video diffusion models still struggle to synthesize realistic videos involving highly dynamic motions or requiring fine-grained motion controllability. A central limitation lies in the scarcity of such examples in commonly used training datasets. To address this, we introduce DynaVid, a video synthesis framework that leverages synthetic motion data in training, which is represented as optical flow and rendered using computer graphics pipelines.</p>
+            <p>This approach offers two key advantages. First, synthetic motion offers diverse motion patterns and precise control signals that are difficult to obtain from real data. Second, unlike rendered videos with artificial appearances, rendered optical flow encodes only motion and is decoupled from appearance, thereby preventing models from reproducing the unnatural look of synthetic videos.</p>
+            <p>Building on this idea, DynaVid adopts a two-stage generation framework: a motion generator first synthesizes motion, and then a motion-guided video generator produces video frames conditioned on that motion. This decoupled formulation enables the model to learn dynamic motion patterns from synthetic data while preserving visual realism from real-world videos.</p>
+            <p>We validate our framework on two challenging scenarios, vigorous human motion generation and extreme camera motion control, where existing datasets are particularly limited. Extensive experiments demonstrate that DynaVid improves the realism and controllability in dynamic motion generation and camera motion control.</p>
+          </div>
+        </details>
       </div>
     </div>
   </article>
@@ -61,7 +88,7 @@
     </a>
     <div class="pub-content">
       <strong class="pub-title">Elevating 3D Models: High-Quality Texture and Geometry Refinement from a Low-Quality Model</strong>
-      <p class="pub-authors">Nuri Ryu, <u>Jiyun Won</u>, Jooeun Son, Minsu Gong, Joo-Haeng Lee, Sunghyun Cho</p>
+      <p class="pub-authors">Nuri Ryu, <strong>Jiyun Won</strong>, Jooeun Son, Minsu Gong, Joo-Haeng Lee, Sunghyun Cho</p>
       <p class="pub-meta"><span class="pub-venue">SIGGRAPH 2025</span></p>
       <div class="pub-links">
         <a class="pub-link" href="https://elevate3d.pages.dev/" target="_blank" rel="noopener noreferrer">
@@ -79,6 +106,19 @@
           <span class="pub-link-gap" aria-hidden="true"></span>
           <span>Code</span>
         </a>
+        <details class="pub-abstract">
+          <summary class="pub-link pub-abstract-toggle">
+            <i class="fa-solid fa-chevron-down pub-abstract-icon" aria-hidden="true"></i>
+            <span class="pub-link-gap" aria-hidden="true"></span>
+            <span>Abstract</span>
+          </summary>
+          <div class="pub-abstract-body">
+            <p><strong>TL;DR.</strong> Diffusion-based texture enhancement and view-guided geometry refinement turn low-quality 3D models into higher-quality assets.</p>
+            <p>High-quality 3D assets are essential for various applications in computer graphics and 3D vision but remain scarce due to significant acquisition costs. To address this shortage, we introduce Elevate3D, a novel framework that transforms readily accessible low-quality 3D assets into higher quality. At the core of Elevate3D is HFS-SDEdit, a specialized texture enhancement method that significantly improves texture quality while preserving the appearance and geometry while fixing its degradations.</p>
+            <p>Furthermore, Elevate3D operates in a view-by-view manner, alternating between texture and geometry refinement. Unlike previous methods that have largely overlooked geometry refinement, our framework leverages geometric cues from images refined with HFS-SDEdit by employing state-of-the-art monocular geometry predictors. This approach ensures detailed and accurate geometry that aligns seamlessly with the enhanced texture.</p>
+            <p>Elevate3D outperforms recent competitors by achieving state-of-the-art quality in 3D model refinement, effectively addressing the scarcity of high-quality open-source 3D assets.</p>
+          </div>
+        </details>
       </div>
     </div>
   </article>

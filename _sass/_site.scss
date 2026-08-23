@@ -350,7 +350,7 @@
 .pub-venue {
   display: inline;
   padding: 0;
-  color: #3f3f3f;
+  color: #2456a6;
   font-family: "Google Sans", "Noto Sans", sans-serif;
   font-size: 0.94rem;
   font-style: italic;
@@ -379,10 +379,10 @@
   min-height: 20px;
   box-sizing: border-box;
   padding: 0.35rem 0.75rem;
-  border: 1px solid #4a4a4a;
+  border: 1px solid #d8e2ee;
   border-radius: 999px;
-  background: #4a4a4a;
-  color: #ffffff;
+  background: #f4f7fb;
+  color: #3f3f3f;
   font-family: "Google Sans", "Noto Sans", sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
@@ -394,12 +394,12 @@
     display: inline-block;
     grid-column: 1;
     justify-self: center;
-    color: #ffffff;
+    color: #667085;
     width: 0.9em;
     font-size: 0.76rem;
     line-height: 1;
     text-align: center;
-    transition: color 150ms ease;
+    transition: color 150ms ease, transform 150ms ease;
   }
 
   > .pub-link-gap {
@@ -414,14 +414,14 @@
   }
 
   &:hover {
-    border-color: #2f2f2f;
-    background: #2f2f2f;
-    color: #ffffff;
+    border-color: rgba(36, 86, 166, 0.32);
+    background: #eaf2ff;
+    color: #2456a6;
     text-decoration: none;
 
     > i,
     > svg {
-      color: #ffffff;
+      color: #2456a6;
     }
   }
 
@@ -429,6 +429,57 @@
     border-radius: 999px;
     outline: 2px solid rgba(43, 108, 176, 0.35);
     outline-offset: 3px;
+  }
+}
+
+.pub-abstract {
+  display: contents;
+}
+
+.pub-abstract-toggle {
+  cursor: pointer;
+  list-style: none;
+
+  &::marker {
+    content: "";
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.pub-abstract[open] > .pub-abstract-toggle {
+  border-color: rgba(36, 86, 166, 0.38);
+  background: #eaf2ff;
+  color: #2456a6;
+
+  > i,
+  > svg {
+    color: #2456a6;
+    transform: rotate(180deg);
+  }
+}
+
+.pub-abstract-body {
+  flex: 1 0 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 12px 14px;
+  border-left: 3px solid rgba(36, 86, 166, 0.35);
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #444;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.62;
+
+  p {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
